@@ -1,0 +1,14 @@
+Package: SeqKat
+Type: Package
+Title: Detection of Kataegis
+Version: 0.0.1
+Date: 2017-01-20
+Author: Fouad Yousif, Xihui Lin, Fan Fan, Christopher Lalansingh
+Maintainer: Fouad Yousif <fouad.yousif@oicr.on.ca>
+Description: Contains functions to detect kataegis from SNVs in BED format
+Depends: R (>= 2.15.1), foreach
+Imports: Rcpp(>= 0.11.0)
+LinkingTo: Rcpp
+Suggests: testthat
+License: GPL-2
+LazyLoad: yes

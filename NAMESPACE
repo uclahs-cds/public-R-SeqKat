@@ -1,0 +1,18 @@
+useDynLib(SeqKat)
+exportPattern("^[[:alpha:]]+")
+
+export(
+	"combine.table",
+	"final.score",
+	"get.context",
+	"get.exprobntcx",
+	"get.nucleotide.chunk.counts",
+	"get.pair",
+	"get.tn",
+	"get.toptn",
+	"seqkat",
+	"test.kataegis"
+	);
+
+import(foreach);
+importFrom(Rcpp, evalCpp);
