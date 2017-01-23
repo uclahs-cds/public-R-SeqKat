@@ -1,7 +1,11 @@
 library(Rcpp);
 library(foreach);
 
-seqkat <- function(sigcutoff, mutdistance, segnum, ref.dir, bed.dir = "./") {
+seqkat <- function(sigcutoff = 5, mutdistance = 3.2, segnum = 4, ref.dir = NULL, bed.dir = "./") {
+	if (is.null(ref.dir)) {
+		stop("Please supply a path to the reference genome with the ref.dir argument.")
+		}
+
 	setwd(bed.dir);
 
 	# save all samples in a list 
