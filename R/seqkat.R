@@ -1,18 +1,22 @@
 library(Rcpp);
 library(foreach);
 
-seqkat <- function(sigcutoff, mutdistance, segnum, ref.dir) {
-	setwd("./");
+seqkat <- function(sigcutoff, mutdistance, segnum, ref.dir, bed.dir = "./") {
+	setwd(bed.dir);
 
 	# save all samples in a list 
 	somatic.list <- list.files(
-		path = '.',
+		path = bed.dir,
 		pattern = '_snvs.bed'
 		);
 
 	output.list <- sapply(
 		somatic.list,
-		function(x) paste(strsplit(x,'_')[[1]][strsplit(x,'_')[[1]]!='snvs.bed'],collapse='_')
+		function(x) {
+			somatic.directory <- paste(strsplit(x,'_')[[1]][strsplit(x,'_')[[1]]!='snvs.bed'],collapse='_');
+			dir.create(somatic.directory);
+			somatic.directory;
+			}
 		);
 
 	for ( i in 1: length(somatic.list)){
