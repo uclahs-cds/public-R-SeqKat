@@ -32,8 +32,11 @@ final.score <- function(test.table, cutoff,somatic,output.name){
 			1:dim(test.table)[1],
 			function(x) median(test.table[x,2], test.table[x,3])
 			);
-			test.table$cutoff <- rep(cutoff,length(test.table$hm.score));
-			write.table(
+		test.table$cutoff <- rep(cutoff,length(test.table$hm.score));
+		if (typeof(test.table$num.tcx) == "list") {
+			test.table$num.tcx <- unlist(test.table$num.tcx);
+			}
+		write.table(
 			test.table,
 			file = paste0(output.name,'/finaltable_chr',unique(test.table$chromosome),'_cutoff',cutoff,'.txt'),
 			row.names = FALSE,
