@@ -1,9 +1,33 @@
 library(Rcpp);
 library(foreach);
 
-seqkat <- function(sigcutoff = 5, mutdistance = 3.2, segnum = 4, ref.dir = NULL, bed.dir = "./") {
+seqkat <- function(
+	sigcutoff = 5,
+	mutdistance = 3.2,
+	segnum = 4,
+	ref.dir = NULL,
+	bed.dir = "./",
+	chromosome.length.file = NULL
+	) {
 	if (is.null(ref.dir)) {
 		stop("Please supply a path to the reference genome with the ref.dir argument.")
+		}
+
+	if (is.null(chromosome.length.file)) {
+		warning("No chromosome.length.file provided, using hg19 lengths by default.");
+		chromosome.length.file <- paste0(path.package("SeqKat"),"/inst/extdata/length_hg19_chr.txt")
+		}
+	else {
+		chr.length <- read.table(file=chromosome.length.file, header = TRUE, stringsAsFactors = FALSE);
+		if (is.null(chr.length$num)) {
+			stop("The supplied chromosome.length.file is missing the 'num' column.");
+			}
+		if (is.null(chr.length$length)) {
+			stop("The supplied chromosome.length.file is missing the 'length' column.");
+			}
+		if (!all.equal(c(as.character(1:24), "sum.f", "sum.m"), chr.length$num)) {
+			stop("The supplied chromosome.length.file is missing required rows.");
+			}
 		}
 
 	setwd(bed.dir);
@@ -26,11 +50,9 @@ seqkat <- function(sigcutoff = 5, mutdistance = 3.2, segnum = 4, ref.dir = NULL,
 	for ( i in 1: length(somatic.list)){
 		somatic.file <- somatic.list[i];
 		print(somatic.file);
-		#print(getwd());
 		somatic<-read.delim(
 			somatic.file,
-			#"BTCA-SG_1e2dcbcc-771c-43c5-8c8d-e0eb77cb3494_snvs.bed",
-			header = TRUE,  ####### 
+			header = TRUE,
 			stringsAsFactors = FALSE
 			);
 		#print("\ntest");
@@ -53,7 +75,8 @@ seqkat <- function(sigcutoff = 5, mutdistance = 3.2, segnum = 4, ref.dir = NULL,
 							 unit = 2,
 							 exprobntcx = exprobntcx,
 							 output.name = output.name,
-							 ref.dir = ref.dir
+							 ref.dir = ref.dir,
+							 chromosome.length.file = chromosome.length.file
 							 ), 
 						 cutoff = sigcutoff, 
 						 somatic,

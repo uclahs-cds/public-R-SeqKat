@@ -1,9 +1,18 @@
 ### TESTKATAEGIS  #####################################################
 # suppose all are female patients here: use the length without chrY
 
-test.kataegis <- function(chromosome.num,somatic,units,npar=TRUE,print=TRUE,exprobntcx,output.name,ref.dir){
+test.kataegis <- function(
+	chromosome.num,
+	somatic,units,
+	npar=TRUE,
+	print=TRUE,
+	exprobntcx,
+	output.name,
+	ref.dir,
+	chromosome.length.file
+	){
 	chromosome.subset <- somatic[somatic$CHR == paste0('chr',chromosome.num),];
-	chr.length <- read.table(file=paste0(path.package("SeqKat"),"/inst/extdata/length_hg19_chr.txt"),header = TRUE, stringsAsFactors = FALSE);
+	chr.length <- read.table(file=chromosome.length.file, header = TRUE, stringsAsFactors = FALSE);
 	average.length <- floor(chr.length[25,2]/dim(somatic)[1]);
 	# unit is the expected mutation number the user wanna include in each window, defult = 2
 	window.size <- average.length*(units - 1);
