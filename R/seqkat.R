@@ -6,13 +6,38 @@ seqkat <- function(
 	mutdistance = 3.2,
 	segnum = 4,
 	ref.dir = NULL,
-	bed.dir = "./",
-	chromosome.length.file = NULL
+	bed.file = "./",
+	output.dir = "./",
+	chromosome = "all",
+	chromosome.length.file = NULL,
+	trinucleotide.count.file = NULL
 	) {
+
+	# Validate sigcutoff, mutdistance, segnum
+	stopifnot(is.numeric(sigcutoff), is.numeric(mutdistance), is.numeric(segnum));
+
+	# Validate the bed.file
+	if (!file.exists(bed.file)) {
+		stop("The bed.file provided does not exist.");
+		}
+
+	# Validate the chromosome
+	if ((chromosome != "all") & (!grepl('^(\\d*)$', chromosome))) {
+		stop("The provided value for chromosome should be of the form (1, 2, ..., 23, 24), without a prepended 'chr'.");
+		}
+	else {
+		stopifnot(as.numeric(chromosome) >= 1, as.numeric(chromosome) <= 24, as.numeric(chromosome)%%1 == 0);
+		}
+
+	# Validate the ref.dir
 	if (is.null(ref.dir)) {
 		stop("Please supply a path to the reference genome with the ref.dir argument.")
 		}
+	if (!file.exists(sapply(1:24, function(x) { paste0(ref.dir, "/chr", x, ".fa") }))) {
+		stop("The ref.dir directory must contain separate fasta files for each chromosome of the form (chr1.fa, chr2.fa, ..., chr23.fa, chr24.fa).")
+		}
 
+	# Validate the chromosome.length.file
 	if (is.null(chromosome.length.file)) {
 		warning("No chromosome.length.file provided, using hg19 lengths by default.");
 		chromosome.length.file <- paste0(path.package("SeqKat"),"/inst/extdata/length_hg19_chr.txt")
@@ -30,64 +55,62 @@ seqkat <- function(
 			}
 		}
 
-	setwd(bed.dir);
+	# Validate the trinucleotide.count.file
+	if (is.null(trinucleotide.count.file)) {
+		warning("No trinucleotide.count.file provided, using hg19 counts by default. This file can be generated using the get.trinucleotide.counts() function in this package.");
+		trinucleotide.count.file <- paste0(path.package("SeqKat"),"/inst/extdata/tn_count.txt")
+		}
 
-	# save all samples in a list 
-	somatic.list <- list.files(
-		path = bed.dir,
-		pattern = '_snvs.bed'
+	setwd(output.dir);
+
+	somatic.directory <- paste(strsplit(bed.file,'_')[[1]][strsplit(bed.file,'_')[[1]]!='snvs.bed'],collapse='_');
+	dir.create(somatic.directory);
+	somatic.file <- bed.file;
+	
+	print(somatic.file);
+	somatic<-read.delim(
+		somatic.file,
+		header = TRUE,
+		stringsAsFactors = FALSE
 		);
 
-	output.list <- sapply(
-		somatic.list,
-		function(x) {
-			somatic.directory <- paste(strsplit(x,'_')[[1]][strsplit(x,'_')[[1]]!='snvs.bed'],collapse='_');
-			dir.create(somatic.directory);
-			somatic.directory;
+	names(somatic) <- c("CHR","POS","REF","ALT");
+
+	#Rename chrX and chrY
+	somatic$CHR <- gsub("chrX","chr23",somatic$CHR);
+	somatic$CHR <- gsub("chrY","chr24",somatic$CHR);
+
+	output.name <- somatic.directory;
+	exprobntcx <- get.exprobntcx(somatic, ref.dir, trinucleotide.count.file);
+	if (chromosome == "all") {
+		chrs <- sort(na.omit(as.numeric(unlist(strsplit(unique(somatic$CHR),'[^0-9]+')))));
+		}
+	else {
+		chrs <- c(chromosome);
+		}
+	sapply(
+		chrs,
+		function(x){
+			combine.table(
+				 final.score(
+					 test.table =  test.kataegis(
+						 chromosome.num = x, 
+						 somatic, 
+						 unit = 2,
+						 exprobntcx = exprobntcx,
+						 output.name = output.name,
+						 ref.dir = ref.dir,
+						 chromosome.length.file = chromosome.length.file
+						 ), 
+					 cutoff = sigcutoff, 
+					 somatic,
+					 output.name = output.name
+					 ),
+				somatic, 
+				mutdistance, 
+				segnum,
+				output.name = output.name
+				);
 			}
 		);
-
-	for ( i in 1: length(somatic.list)){
-		somatic.file <- somatic.list[i];
-		print(somatic.file);
-		somatic<-read.delim(
-			somatic.file,
-			header = TRUE,
-			stringsAsFactors = FALSE
-			);
-		#print("\ntest");
-		names(somatic) <- c("CHR","POS","REF","ALT");
-		#Rename chrX and chrY
-		somatic$CHR <- gsub("chrX","chr23",somatic$CHR);
-		somatic$CHR <- gsub("chrY","chr24",somatic$CHR);
-		# output.name
-		output.name <- output.list[i];
-		exprobntcx <- get.exprobntcx(somatic, ref.dir);
-		chrs <- sort(na.omit(as.numeric(unlist(strsplit(unique(somatic$CHR),'[^0-9]+')))));
-		sapply(
-			chrs,
-			function(x){
-				combine.table(
-					 final.score(
-						 test.table =  test.kataegis(
-							 chromosome.num = x, 
-							 somatic, 
-							 unit = 2,
-							 exprobntcx = exprobntcx,
-							 output.name = output.name,
-							 ref.dir = ref.dir,
-							 chromosome.length.file = chromosome.length.file
-							 ), 
-						 cutoff = sigcutoff, 
-						 somatic,
-						 output.name = output.name
-						 ),
-					somatic, 
-					mutdistance, 
-					segnum,
-					output.name = output.name
-					);
-				}
-			);
-		}
 	}
