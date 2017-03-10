@@ -1,7 +1,7 @@
 ### FUNCTION: GET.EXPROB  ###########################################################
 # function to get the expected probability for each trinucleotide and total number of tcx
 
-get.exprobntcx <- function(somatic,ref.dir){
+get.exprobntcx <- function(somatic, ref.dir, trinucleotide.count.file){
 	ref.tn.total <- vector();
 	tn.tcx <- vector();
 	foreach( chr = 1:24) %do% {
@@ -23,7 +23,7 @@ get.exprobntcx <- function(somatic,ref.dir){
 		}
 	ref.mut <- as.data.frame(table(ref.tn.total));
 	ref.genome <- read.table(
-		file=paste0(path.package("SeqKat"),"/inst/extdata/tn_count.txt"),
+		file=trinucleotide.count.file,
 		header = TRUE,
 		);
 	ref.mut[,1] <- as.character(ref.mut[,1]);

@@ -5,6 +5,10 @@ cget_nucleotide_chunk_counts <- function(key, chr, up_stream = 1L, down_stream =
     .Call('SeqKat_cget_nucleotide_chunk_counts', PACKAGE = 'SeqKat', key, chr, up_stream, down_stream, start, end)
 }
 
+cget_trinucleotide_counts <- function(key, chr, length = 3L, start = 1L, end = -1L) {
+    .Call('SeqKat_cget_trinucleotide_counts', PACKAGE = 'SeqKat', key, chr, length, start, end)
+}
+
 cpp_get_context <- function(chr, pos, pos_length) {
     .Call('SeqKat_cpp_get_context', PACKAGE = 'SeqKat', chr, pos, pos_length)
 }

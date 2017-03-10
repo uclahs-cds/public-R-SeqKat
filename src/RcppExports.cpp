@@ -21,6 +21,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cget_trinucleotide_counts
+Rcpp::NumericVector cget_trinucleotide_counts(std::vector<std::string> key, std::string chr, const int length, long int start, long int end);
+RcppExport SEXP SeqKat_cget_trinucleotide_counts(SEXP keySEXP, SEXP chrSEXP, SEXP lengthSEXP, SEXP startSEXP, SEXP endSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type key(keySEXP);
+    Rcpp::traits::input_parameter< std::string >::type chr(chrSEXP);
+    Rcpp::traits::input_parameter< const int >::type length(lengthSEXP);
+    Rcpp::traits::input_parameter< long int >::type start(startSEXP);
+    Rcpp::traits::input_parameter< long int >::type end(endSEXP);
+    rcpp_result_gen = Rcpp::wrap(cget_trinucleotide_counts(key, chr, length, start, end));
+    return rcpp_result_gen;
+END_RCPP
+}
 // cpp_get_context
 Rcpp::CharacterVector cpp_get_context(std::string chr, Rcpp::NumericVector pos, unsigned long pos_length);
 RcppExport SEXP SeqKat_cpp_get_context(SEXP chrSEXP, SEXP posSEXP, SEXP pos_lengthSEXP) {
