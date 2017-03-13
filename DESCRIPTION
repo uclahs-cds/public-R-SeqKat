@@ -1,8 +1,8 @@
 Package: SeqKat
 Type: Package
 Title: Detection of Kataegis
-Version: 0.0.1
-Date: 2017-01-20
+Version: 0.0.2
+Date: 2017-03-13
 Author: Fouad Yousif, Xihui Lin, Fan Fan, Christopher Lalansingh
 Maintainer: Fouad Yousif <fouad.yousif@oicr.on.ca>
 Description: Contains functions to detect kataegis from SNVs in BED format
