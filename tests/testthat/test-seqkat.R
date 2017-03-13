@@ -1,7 +1,7 @@
 expect_error(
 	{
-	seqkat(5, 3.2, 4, bed.dir = ".")
+	seqkat(5, 3.2, 4, bed.file = "test.bed")
 		},
-	"Please supply a path to the reference genome with the ref.dir argument.",
+	"The bed.file provided does not exist.",
 	info = "seqkat Error 1"
 	);
