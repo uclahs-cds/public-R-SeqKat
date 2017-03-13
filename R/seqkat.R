@@ -5,7 +5,7 @@ seqkat <- function(
 	sigcutoff = 5,
 	mutdistance = 3.2,
 	segnum = 4,
-	ref.dir = NULL,
+	ref.dir  = NULL,
 	bed.file = "./",
 	output.dir = "./",
 	chromosome = "all",
@@ -25,7 +25,7 @@ seqkat <- function(
 	if ((chromosome != "all") & (!grepl('^(\\d*)$', chromosome))) {
 		stop("The provided value for chromosome should be of the form (1, 2, ..., 23, 24), without a prepended 'chr'.");
 		}
-	else {
+	else if (grepl('^(\\d*)$', chromosome)) {
 		stopifnot(as.numeric(chromosome) >= 1, as.numeric(chromosome) <= 24, as.numeric(chromosome)%%1 == 0);
 		}
 
@@ -33,7 +33,7 @@ seqkat <- function(
 	if (is.null(ref.dir)) {
 		stop("Please supply a path to the reference genome with the ref.dir argument.")
 		}
-	if (!file.exists(sapply(1:24, function(x) { paste0(ref.dir, "/chr", x, ".fa") }))) {
+	if (!all(file.exists(sapply(1:24, function(x) { paste0(ref.dir, "/chr", x, ".fa") })))) {
 		stop("The ref.dir directory must contain separate fasta files for each chromosome of the form (chr1.fa, chr2.fa, ..., chr23.fa, chr24.fa).")
 		}
 
@@ -61,9 +61,12 @@ seqkat <- function(
 		trinucleotide.count.file <- paste0(path.package("SeqKat"),"/inst/extdata/tn_count.txt")
 		}
 
+	if (!file.exists(output.dir)) {
+		dir.create(output.dir);
+		}
 	setwd(output.dir);
 
-	somatic.directory <- paste(strsplit(bed.file,'_')[[1]][strsplit(bed.file,'_')[[1]]!='snvs.bed'],collapse='_');
+	somatic.directory <- paste(strsplit(basename(bed.file),'_')[[1]][strsplit(basename(bed.file),'_')[[1]]!='snvs.bed'],collapse='_');
 	dir.create(somatic.directory);
 	somatic.file <- bed.file;
 	
@@ -86,7 +89,7 @@ seqkat <- function(
 		chrs <- sort(na.omit(as.numeric(unlist(strsplit(unique(somatic$CHR),'[^0-9]+')))));
 		}
 	else {
-		chrs <- c(chromosome);
+		chrs <- c(as.numeric(chromosome));
 		}
 	sapply(
 		chrs,
