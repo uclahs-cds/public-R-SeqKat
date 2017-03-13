@@ -13,7 +13,16 @@ seqkat(sigcutoff, mutdistance, segnum, ref.dir, bed.dir = "./")
 
 \item{ref.dir}{Path to a directory containing the reference genome.}
 
-\item{bed.dir}{Path to a directory containing the SNV data in BED format. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele}
+\item{bed.file}{Path to a directory containing the SNV data in BED format. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele}
+
+\item{output.dir}{Path to a directory where output will be created.}
+
+\item{chromosome}{The chromosome to be analysed. This can be (1, 2, ..., 23, 24) or "all" to run sequentially on all chromosomes.}
+
+\item{chromomsome.length.file}{A tab separated file containing the lengths of all chromosomes in the reference genome.}
+
+\item{trinucleotide.count.file}{A tab seprarated file containing a count of all trinucleotides present in the reference genome. This can be generated with the get.trinucleotide.counts() function in this package.}
+
 }
 \description{
 Analyzes SNV data in BED format to detect Kataegic events
@@ -23,8 +32,9 @@ Analyzes SNV data in BED format to detect Kataegic events
 }
 
 \examples{
-seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.dir="~/path/to/snv/data/")
-
+\dontrun{
+seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.file="~/path/to/snv/data/file.bed", output.dir = ".", chromosome = "all", chromosome.length.file = "lengths.tsv", trinucleotide.count.file = "counts.tsv")
+}
 }
 \author{
 \email{Fouad.Yousif@oicr.on.ca}
