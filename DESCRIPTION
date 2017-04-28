@@ -4,7 +4,7 @@ Title: Detection of Kataegis
 Version: 0.0.2
 Date: 2017-03-13
 Author: Fouad Yousif, Xihui Lin, Fan Fan, Christopher Lalansingh
-Maintainer: Paul Boutros <paul.boutros@oicr.on.ca>
+Maintainer: Dr. Paul Boutros <paul.boutros@oicr.on.ca>
 Description: Contains functions to detect kataegis from SNVs in BED format
 Depends: R (>= 2.15.1), foreach, doMC, doParallel
 Imports: Rcpp(>= 0.11.0)
