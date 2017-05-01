@@ -1,5 +1,22 @@
-# finalScore: assign significant indicator by hm.score (to be used)
-final.score <- function(test.table, cutoff,somatic,output.name){
+#' Final Score
+#'
+#' Assigns significant indicator by hm.score
+#'
+#' Detailed description
+#' 
+#' @param test.table Data frame of kataegis test scores
+#' @param cutoff The minimum hypermutation score used to classify the windows in the sliding binomial test as significant windows. The score is calculated per window as follows: -log10(binomial test p-value). Recommended value: 5
+#' @param somatic Data frame of somatic variants
+#' @param output.name Name of the generated output directory.
+#'
+#' @examples
+#' \dontrun{
+#' final.score(test.table, cutoff, somatic, output.name)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
+
+final.score <- function(test.table, cutoff, somatic, output.name){
 	if (dim(test.table)[1] > 0){
 		temp <- sapply( 
 			as.character(test.table$base.change[as.character(test.table$base.change) != 'base change']),

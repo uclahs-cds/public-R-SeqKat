@@ -1,6 +1,29 @@
 library(Rcpp);
 library(foreach);
 
+#' SeqKat
+#'
+#' Kataegis detection from SNV BED files
+#'
+#' The default paramters in SeqKat have been optimized using Alexanrov's "Signatures of mutational processes in human cancer" dataset. SeqKat accepts a BED file and outputs the results in TXT format. A file per chromosome is generated if a kataegic event is detected, otherwise no file is generated. SeqKat reports two scores per kataegic event, a hypermutation score and an APOBEC mediated kataegic score.
+#' 
+#' @param sigcutoff The minimum hypermutation score used to classify the windows in the sliding binomial test as significant windows. The score is calculated per window as follows: -log10(binomial test p-value). Recommended value: 5
+#' @param mutdistance The maximum intermutational distance allowed for SNVs to be grouped in the same kataegic event. Recommended value: 3.2
+#' @param segnum Minimum mutation count. The minimum number of mutations required within a cluster to be identified as kataegic. Recommended value: 4
+#' @param ref.dir Path to a directory containing the reference genome.
+#' @param bed.file Path to a directory containing the SNV data in BED format. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele
+#' @param output.dir Path to a directory where output will be created.
+#' @param chromosome The chromosome to be analysed. This can be (1, 2, ..., 23, 24) or "all" to run sequentially on all chromosomes.
+#' @param chromosome.length.file A tab separated file containing the lengths of all chromosomes in the reference genome.
+#' @param trinucleotide.count.file A tab seprarated file containing a count of all trinucleotides present in the reference genome. This can be generated with the get.trinucleotide.counts() function in this package.
+#'
+#' @examples
+#' \dontrun{
+#' seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.file="~/path/to/snv/data/file.bed", output.dir = ".", chromosome = "all", chromosome.length.file = "lengths.tsv", trinucleotide.count.file = "counts.tsv")
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
+
 seqkat <- function(
 	sigcutoff = 5,
 	mutdistance = 3.2,

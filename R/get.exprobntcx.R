@@ -1,5 +1,19 @@
-### FUNCTION: GET.EXPROB  ###########################################################
-# function to get the expected probability for each trinucleotide and total number of tcx
+#' get.exprobntcx
+#'
+#' Gets the expected probability for each trinucleotide and total number of tcx
+#'
+#' Detailed description
+#' 
+#' @param somatic Data frame of somatic variants
+#' @param ref.dir Path to a directory containing the reference genome.
+#' @param trinucleotide.count.file A tab seprarated file containing a count of all trinucleotides present in the reference genome. This can be generated with the get.trinucleotide.counts() function in this package.
+#'
+#' @examples
+#' \dontrun{
+#' get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
 
 get.exprobntcx <- function(somatic, ref.dir, trinucleotide.count.file){
 	ref.tn.total <- vector();

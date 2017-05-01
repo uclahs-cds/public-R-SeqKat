@@ -1,3 +1,20 @@
+#' Get Trinucleotide Counts
+#'
+#' Aggregates the total counts of each possible trinucleotide.
+#'
+#' Detailed description
+#' 
+#' @param ref.dir Path to a directory containing the reference genome.
+#' @param ref.name Name of the reference genome being used (i.e. hg19, GRCh38, etc)
+#' @param output.dir Path to a directory where output will be created.
+#'
+#' @examples
+#' \dontrun{
+#' get.trinucleotide.counts(ref.dir, ref.name, output.dir)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
+
 get.trinucleotide.counts <- function(ref.dir, ref.name, output.dir) {
 
     # for multi-core parallel
@@ -68,12 +85,3 @@ tricount.collapse <- function(counts) {
         FUN = sum
         );
     }
-
-# library(Rcpp);
-# library(doParallel);
-# library(foreach);
-# library(doMC);
-# ref.dir <- "/.mounts/labs/boutroslab/scratch/fyousif/hg19_ref"
-# ref.name <- 'hg19'
-# output.dir <- "./"
-# sourceCpp(file.path('src/cget_trinucleotide_counts.cpp'));

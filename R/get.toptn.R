@@ -1,5 +1,22 @@
-### GET.TOPTN  #######################################################################
-# somatic.subset is the .bed file for a single chr
+#' Get Top Trinucleotides
+#'
+#' Short description
+#'
+#' Detailed description
+#' 
+#' @param somatic.subset Data frame of somatic variants subset for a specific chromosome
+#' @param chr Chromosome
+#' @param start.bp Starting position
+#' @param end.bp Ending position
+#' @param ref.dir Path to a directory containing the reference genome.
+#'
+#' @examples
+#' \dontrun{
+#' get.toptn(somatic.subset, chr, start.bp, end.bp, ref.dir)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
+
 get.toptn <- function(somatic.subset, chr, start.bp, end.bp, ref.dir){
 	dict <- c('A' = 'T', 'C' = 'G', 'G' = 'C', 'T' = 'A', 'N' = 'N');
 	

@@ -1,5 +1,22 @@
-### COBINE TABLE #########################################################################
-# merge the overlapped windows
+#' Combine Table
+#'
+#' Merges overlapped windows
+#'
+#' Detailed description
+#' 
+#' @param test.table Data frame of kataegis test scores
+#' @param somatic Data frame of somatic variants
+#' @param mutdistance The maximum intermutational distance allowed for SNVs to be grouped in the same kataegic event. Recommended value: 3.2
+#' @param segnum Minimum mutation count. The minimum number of mutations required within a cluster to be identified as kataegic. Recommended value: 4
+#' @param output.name Name of the generated output directory.
+#'
+#' @examples
+#' \dontrun{
+#' combine.table(test.table, somatic, mutdistance,segnum,output.name)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
+
 combine.table <- function(test.table, somatic, mutdistance,segnum,output.name){
 	sig.table <- test.table[test.table$significance > 1,];
 	# need a ifelse here, if no rows in sigtable, then OK, no potential kataegis events

@@ -1,5 +1,25 @@
-### TESTKATAEGIS  #####################################################
-# suppose all are female patients here: use the length without chrY
+#' Test Kataegis
+#'
+#' Short description
+#'
+#' Detailed description
+#' 
+#' @param chromosome.num asdf
+#' @param somatic asdf
+#' @param units asdf
+#' @param npar asdf
+#' @param print asdf
+#' @param exprobntcx asdf
+#' @param output.name asdf
+#' @param ref.dir Path to a directory containing the reference genome.
+#' @param chromosome.length.file asdf
+#'
+#' @examples
+#' \dontrun{
+#' test.kataegis(chromosome.num, somatic,units, npar=TRUE, print=TRUE, exprobntcx, output.name, ref.dir, chromosome.length.file)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
 
 test.kataegis <- function(
 	chromosome.num,
@@ -11,6 +31,7 @@ test.kataegis <- function(
 	ref.dir,
 	chromosome.length.file
 	){
+	# suppose all are female patients here: use the length without chrY
 	chromosome.subset <- somatic[somatic$CHR == paste0('chr',chromosome.num),];
 	chr.length <- read.table(file=chromosome.length.file, header = TRUE, stringsAsFactors = FALSE);
 	average.length <- floor(chr.length[25,2]/dim(somatic)[1]);

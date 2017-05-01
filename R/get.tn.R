@@ -1,3 +1,21 @@
+#' Get Trinucleotides
+#'
+#' Count the frequencies of 32 trinucleotide in a region respectively 
+#'
+#' Detailed description
+#' 
+#' @param chr Chromosome
+#' @param start.bp Starting position
+#' @param end.bp Ending position
+#' @param ref.dir Path to a directory containing the reference genome.
+#'
+#' @examples
+#' \dontrun{
+#' get.tn(chr,start.bp,end.bp,ref.dir)
+#' }
+#'
+#' @author \email{Fouad.Yousif@oicr.on.ca}
+
 ### FUNCTION: GET.TN  ##############################################################
 # count the frequencies of 32 trinucleotide in a region respectively 
 
