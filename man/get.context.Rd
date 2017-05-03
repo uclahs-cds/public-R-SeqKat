@@ -15,10 +15,7 @@ get.context(file, start)
 The trinucleotide context.
 }
 \description{
-Get the 3 context positions around the mutation
-}
-\details{
-Detailed description
+Gets the 5' and 3' neighboring bases to the mutated base
 }
 \examples{
 \dontrun{
@@ -27,5 +24,7 @@ get.context(file.path(referencie.genome.dir, 'chr1.fa'), c(158297133, 161176181)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fouad Yousif
+
+Fan Fan
 }

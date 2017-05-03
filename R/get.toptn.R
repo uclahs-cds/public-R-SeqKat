@@ -14,8 +14,8 @@
 #' get.toptn(somatic.subset, chr, start.bp, end.bp, ref.dir)
 #' }
 #'
-#' @author \Fan Fan
-#' @author \Fouad Yousif
+#' @author Fan Fan
+#' @author Fouad Yousif
 
 get.toptn <- function(somatic.subset, chr, start.bp, end.bp, ref.dir){
 	dict <- c('A' = 'T', 'C' = 'G', 'G' = 'C', 'T' = 'A', 'N' = 'N');

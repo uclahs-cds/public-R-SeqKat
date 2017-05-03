@@ -1,3 +1,7 @@
+library(doParallel);
+library(doMC);
+globalVariables("chr");
+
 #' Get Trinucleotide Counts
 #'
 #' Aggregates the total counts of each possible trinucleotide.
@@ -12,8 +16,8 @@
 #' get.trinucleotide.counts(ref.dir, ref.name, output.dir)
 #' }
 #'
-#' @author \Fan Fan
-#' @author \Fouad Yousif
+#' @author Fan Fan
+#' @author Fouad Yousif
 
 get.trinucleotide.counts <- function(ref.dir, ref.name, output.dir) {
 

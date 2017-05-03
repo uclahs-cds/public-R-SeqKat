@@ -13,8 +13,8 @@
 #' final.score(test.table, cutoff, somatic, output.name)
 #' }
 #'
-#' @author \Fan Fan
-#' @author \Fouad Yousif
+#' @author Fan Fan
+#' @author Fouad Yousif
 
 final.score <- function(test.table, cutoff, somatic, output.name){
 	if (dim(test.table)[1] > 0){

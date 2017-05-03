@@ -22,7 +22,9 @@ library(foreach);
 #' seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.file="~/path/to/snv/data/file.bed", output.dir = ".", chromosome = "all", chromosome.length.file = "lengths.tsv", trinucleotide.count.file = "counts.tsv")
 #' }
 #'
-#' @author \Fouad Yousif, Fan Fan
+#' @author Fouad Yousif
+#' @author Fan Fan
+#' @author Christopher Lalansingh
 
 seqkat <- function(
 	sigcutoff = 5,
@@ -122,7 +124,7 @@ seqkat <- function(
 					 test.table =  test.kataegis(
 						 chromosome.num = x, 
 						 somatic, 
-						 unit = 2,
+						 units = 2,
 						 exprobntcx = exprobntcx,
 						 output.name = output.name,
 						 ref.dir = ref.dir,

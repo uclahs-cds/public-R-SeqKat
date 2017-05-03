@@ -18,9 +18,6 @@ get.tn(chr, start.bp, end.bp, ref.dir)
 \description{
 Count the frequencies of 32 trinucleotide in a region respectively
 }
-\details{
-Detailed description
-}
 \examples{
 \dontrun{
 get.tn(chr,start.bp,end.bp,ref.dir)
@@ -28,5 +25,5 @@ get.tn(chr,start.bp,end.bp,ref.dir)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fan Fan
 }

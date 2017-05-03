@@ -21,17 +21,8 @@ get.nucleotide.chunk.counts(key, chr, upstream = 1, downstream = 1,
 \item{end}{Ending position}
 }
 \description{
-Short description
-}
-\details{
-Detailed description
-}
-\examples{
-\dontrun{
-
-}
-
+Obtain counts for all possible trinucleotides within a specified genomic region
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fouad Yousif
 }

@@ -22,5 +22,5 @@ get.pair("GATTACA")
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fouad Yousif
 }

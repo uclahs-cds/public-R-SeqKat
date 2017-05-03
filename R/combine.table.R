@@ -14,8 +14,8 @@
 #' combine.table(test.table, somatic, mutdistance,segnum,output.name)
 #' }
 #'
-#' @author \Fouad Yousif
-#' @author \Fan Fan
+#' @author Fouad Yousif
+#' @author Fan Fan
 
 combine.table <- function(test.table, somatic, mutdistance,segnum,output.name){
 	sig.table <- test.table[test.table$significance > 1,];

@@ -18,10 +18,7 @@ get.toptn(somatic.subset, chr, start.bp, end.bp, ref.dir)
 \item{ref.dir}{Path to a directory containing the reference genome.}
 }
 \description{
-Short description
-}
-\details{
-Detailed description
+Generate a tri-nucleotide summary for each sliding window
 }
 \examples{
 \dontrun{
@@ -30,5 +27,7 @@ get.toptn(somatic.subset, chr, start.bp, end.bp, ref.dir)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fan Fan
+
+Fouad Yousif
 }

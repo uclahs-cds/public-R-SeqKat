@@ -11,7 +11,7 @@
 #' get.pair("GATTACA")
 #' }
 #'
-#' @author \Fouad Yousif
+#' @author Fouad Yousif
 
 get.pair <- function(x) {
 	dict <- c('A' = 'T', 'C' = 'G', 'G' = 'C', 'T' = 'A', 'N' = 'N');

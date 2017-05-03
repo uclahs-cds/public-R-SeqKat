@@ -18,10 +18,7 @@ combine.table(test.table, somatic, mutdistance, segnum, output.name)
 \item{output.name}{Name of the generated output directory.}
 }
 \description{
-Merges overlapped windows
-}
-\details{
-Detailed description
+Merges overlapped windows to identify genomic boundaries of kataegic events. This function also assigns hypermuation and kataegic score for combined windows
 }
 \examples{
 \dontrun{
@@ -30,5 +27,7 @@ combine.table(test.table, somatic, mutdistance,segnum,output.name)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fouad Yousif
+
+Fan Fan
 }

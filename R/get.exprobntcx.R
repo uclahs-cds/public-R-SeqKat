@@ -1,3 +1,7 @@
+library(doParallel);
+library(doMC);
+globalVariables("chr");
+
 #' get.exprobntcx
 #'
 #' Gets the expected probability for each trinucleotide and total number of tcx
@@ -12,8 +16,8 @@
 #' get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
 #' }
 #'
-#' @author \Fan Fan
-#' @author \Fouad Yousif
+#' @author Fan Fan
+#' @author Fouad Yousif
 
 get.exprobntcx <- function(somatic, ref.dir, trinucleotide.count.file){
 	ref.tn.total <- vector();

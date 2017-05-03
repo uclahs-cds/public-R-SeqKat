@@ -4,40 +4,33 @@
 \alias{test.kataegis}
 \title{Test Kataegis}
 \usage{
-test.kataegis(chromosome.num, somatic, units, npar = TRUE, print = TRUE,
-  exprobntcx, output.name, ref.dir, chromosome.length.file)
+test.kataegis(chromosome.num, somatic, units, exprobntcx, output.name, ref.dir,
+  chromosome.length.file)
 }
 \arguments{
-\item{chromosome.num}{asdf}
+\item{chromosome.num}{Chromosome}
 
-\item{somatic}{asdf}
+\item{somatic}{Data frame of somatic variants}
 
-\item{units}{asdf}
+\item{units}{Base window size}
 
-\item{npar}{asdf}
+\item{exprobntcx}{Expected probability for each trinucleotide and total number of tcx}
 
-\item{print}{asdf}
-
-\item{exprobntcx}{asdf}
-
-\item{output.name}{asdf}
+\item{output.name}{Name of the generated output directory.}
 
 \item{ref.dir}{Path to a directory containing the reference genome.}
 
-\item{chromosome.length.file}{asdf}
+\item{chromosome.length.file}{A tab separated file containing the lengths of all chromosomes in the reference genome.}
 }
 \description{
-Short description
-}
-\details{
-Detailed description
+Performs exact binomial test to test the deviation of the 32 tri-nucleotides counts from expected
 }
 \examples{
 \dontrun{
-test.kataegis(chromosome.num, somatic,units, npar=TRUE, print=TRUE, exprobntcx, output.name, ref.dir, chromosome.length.file)
+test.kataegis(chromosome.num, somatic,units, exprobntcx, output.name, ref.dir, chromosome.length.file)
 }
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fouad Yousif
 }

@@ -1,5 +1,5 @@
 useDynLib(SeqKat)
-exportPattern("^[[:alpha:]]+")
+
 
 export(
 	"combine.table",
@@ -15,4 +15,8 @@ export(
 	);
 
 import(foreach);
+importFrom("doMC", "registerDoMC");
+import(doParallel);
 importFrom(Rcpp, evalCpp);
+importFrom("stats", "binom.test", "median", "na.omit", "p.adjust");
+importFrom("utils", "read.delim", "read.table", "tail", "write.table");

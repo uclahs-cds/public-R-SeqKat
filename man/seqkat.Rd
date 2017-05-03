@@ -40,5 +40,9 @@ seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.file="~/path/to/snv/data/file.be
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fouad Yousif
+
+Fan Fan
+
+Christopher Lalansingh
 }

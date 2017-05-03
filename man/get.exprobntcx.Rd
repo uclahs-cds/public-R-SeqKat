@@ -16,9 +16,6 @@ get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
 \description{
 Gets the expected probability for each trinucleotide and total number of tcx
 }
-\details{
-Detailed description
-}
 \examples{
 \dontrun{
 get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
@@ -26,5 +23,7 @@ get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fan Fan
+
+Fouad Yousif
 }

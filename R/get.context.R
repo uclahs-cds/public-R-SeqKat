@@ -15,8 +15,8 @@ library(Rcpp);
 #' get.context(file.path(referencie.genome.dir, 'chr1.fa'), c(158297133, 161176181))
 #' }
 #'
-#' @author \Fouad Yousif
-#' @author \Fan Fan
+#' @author Fouad Yousif
+#' @author Fan Fan
 
 
 get.context  <-  function (file,start){

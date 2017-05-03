@@ -89,8 +89,10 @@ Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, s
         } 
         else 
         {
-                printf("Fail to open file!");
-                exit(EXIT_FAILURE);
+                // Typical CRAN: "Compiled code should not call entry points which might terminate R nor
+                // write to stdout/stderr instead of to the console, nor the system RNG.", so we won't printf or exit here.
+                // printf("Fail to open file!");
+                // exit(EXIT_FAILURE);
         }
 
         f.close();

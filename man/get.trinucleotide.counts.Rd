@@ -16,9 +16,6 @@ get.trinucleotide.counts(ref.dir, ref.name, output.dir)
 \description{
 Aggregates the total counts of each possible trinucleotide.
 }
-\details{
-Detailed description
-}
 \examples{
 \dontrun{
 get.trinucleotide.counts(ref.dir, ref.name, output.dir)
@@ -26,5 +23,7 @@ get.trinucleotide.counts(ref.dir, ref.name, output.dir)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fan Fan
+
+Fouad Yousif
 }

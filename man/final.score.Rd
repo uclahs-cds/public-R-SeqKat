@@ -16,10 +16,7 @@ final.score(test.table, cutoff, somatic, output.name)
 \item{output.name}{Name of the generated output directory.}
 }
 \description{
-Assigns significant indicator by hm.score
-}
-\details{
-Detailed description
+Assigns hypermutation score (hm.score) and kataegic score (k.score)
 }
 \examples{
 \dontrun{
@@ -28,5 +25,7 @@ final.score(test.table, cutoff, somatic, output.name)
 
 }
 \author{
-\email{Fouad.Yousif@oicr.on.ca}
+Fan Fan
+
+Fouad Yousif
 }

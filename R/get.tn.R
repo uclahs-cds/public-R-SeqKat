@@ -13,7 +13,7 @@
 #' get.tn(chr,start.bp,end.bp,ref.dir)
 #' }
 #'
-#' @author \Fan Fan
+#' @author Fan Fan
 
 ### FUNCTION: GET.TN  ##############################################################
 # count the frequencies of 32 trinucleotide in a region respectively 

@@ -3,28 +3,25 @@
 #' Performs exact binomial test to test the deviation of the 32 tri-nucleotides counts from expected
 #'
 #' 
-#' @param chromosome.num asdf
-#' @param somatic asdf
-#' @param units asdf
-#' @param npar asdf
-#' @param print asdf
-#' @param exprobntcx asdf
-#' @param output.name asdf
+#' @param chromosome.num Chromosome
+#' @param somatic Data frame of somatic variants
+#' @param units Base window size
+#' @param exprobntcx Expected probability for each trinucleotide and total number of tcx
+#' @param output.name Name of the generated output directory.
 #' @param ref.dir Path to a directory containing the reference genome.
-#' @param chromosome.length.file asdf
+#' @param chromosome.length.file A tab separated file containing the lengths of all chromosomes in the reference genome.
 #'
 #' @examples
 #' \dontrun{
-#' test.kataegis(chromosome.num, somatic,units, npar=TRUE, print=TRUE, exprobntcx, output.name, ref.dir, chromosome.length.file)
+#' test.kataegis(chromosome.num, somatic,units, exprobntcx, output.name, ref.dir, chromosome.length.file)
 #' }
 #'
-#' @author \Fouad Yousif
+#' @author Fouad Yousif
 
 test.kataegis <- function(
 	chromosome.num,
-	somatic,units,
-	npar=TRUE,
-	print=TRUE,
+	somatic,
+	units,
 	exprobntcx,
 	output.name,
 	ref.dir,

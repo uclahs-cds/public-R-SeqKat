@@ -5,7 +5,7 @@ Version: 0.0.2
 Date: 2017-03-13
 Author: Fouad Yousif, Xihui Lin, Fan Fan, Christopher Lalansingh
 Maintainer: Dr. Paul Boutros <paul.boutros@oicr.on.ca>
-Description: Contains functions to detect kataegis from SNVs in BED format
+Description: Contains functions to detect kataegis from SNVs in BED format. SeqKat reports two scores per kataegic event, a hypermutation score and an APOBEC mediated kataegic score.
 Depends: R (>= 2.15.1), foreach, doMC, doParallel
 Imports: Rcpp(>= 0.11.0)
 LinkingTo: Rcpp
