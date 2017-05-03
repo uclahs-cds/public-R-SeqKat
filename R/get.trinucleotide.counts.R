@@ -2,8 +2,7 @@
 #'
 #' Aggregates the total counts of each possible trinucleotide.
 #'
-#' Detailed description
-#' 
+#'
 #' @param ref.dir Path to a directory containing the reference genome.
 #' @param ref.name Name of the reference genome being used (i.e. hg19, GRCh38, etc)
 #' @param output.dir Path to a directory where output will be created.
@@ -13,7 +12,8 @@
 #' get.trinucleotide.counts(ref.dir, ref.name, output.dir)
 #' }
 #'
-#' @author \email{Fouad.Yousif@oicr.on.ca}
+#' @author \Fan Fan
+#' @author \Fouad Yousif
 
 get.trinucleotide.counts <- function(ref.dir, ref.name, output.dir) {
 

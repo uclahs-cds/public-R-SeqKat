@@ -1,8 +1,7 @@
 #' Test Kataegis
 #'
-#' Short description
+#' Performs exact binomial test to test the deviation of the 32 tri-nucleotides counts from expected
 #'
-#' Detailed description
 #' 
 #' @param chromosome.num asdf
 #' @param somatic asdf
@@ -19,7 +18,7 @@
 #' test.kataegis(chromosome.num, somatic,units, npar=TRUE, print=TRUE, exprobntcx, output.name, ref.dir, chromosome.length.file)
 #' }
 #'
-#' @author \email{Fouad.Yousif@oicr.on.ca}
+#' @author \Fouad Yousif
 
 test.kataegis <- function(
 	chromosome.num,

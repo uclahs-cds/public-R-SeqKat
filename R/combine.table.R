@@ -1,9 +1,8 @@
 #' Combine Table
 #'
-#' Merges overlapped windows
+#' Merges overlapped windows to identify genomic boundaries of kataegic events. This function also assigns hypermuation and kataegic score for combined windows
 #'
-#' Detailed description
-#' 
+#'
 #' @param test.table Data frame of kataegis test scores
 #' @param somatic Data frame of somatic variants
 #' @param mutdistance The maximum intermutational distance allowed for SNVs to be grouped in the same kataegic event. Recommended value: 3.2
@@ -15,7 +14,8 @@
 #' combine.table(test.table, somatic, mutdistance,segnum,output.name)
 #' }
 #'
-#' @author \email{Fouad.Yousif@oicr.on.ca}
+#' @author \Fouad Yousif
+#' @author \Fan Fan
 
 combine.table <- function(test.table, somatic, mutdistance,segnum,output.name){
 	sig.table <- test.table[test.table$significance > 1,];

@@ -1,8 +1,7 @@
 #' Final Score
 #'
-#' Assigns significant indicator by hm.score
+#' Assigns hypermutation score (hm.score) and kataegic score (k.score)
 #'
-#' Detailed description
 #' 
 #' @param test.table Data frame of kataegis test scores
 #' @param cutoff The minimum hypermutation score used to classify the windows in the sliding binomial test as significant windows. The score is calculated per window as follows: -log10(binomial test p-value). Recommended value: 5
@@ -14,7 +13,8 @@
 #' final.score(test.table, cutoff, somatic, output.name)
 #' }
 #'
-#' @author \email{Fouad.Yousif@oicr.on.ca}
+#' @author \Fan Fan
+#' @author \Fouad Yousif
 
 final.score <- function(test.table, cutoff, somatic, output.name){
 	if (dim(test.table)[1] > 0){

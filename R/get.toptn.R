@@ -1,8 +1,7 @@
 #' Get Top Trinucleotides
 #'
-#' Short description
+#' Generate a tri-nucleotide summary for each sliding window
 #'
-#' Detailed description
 #' 
 #' @param somatic.subset Data frame of somatic variants subset for a specific chromosome
 #' @param chr Chromosome
@@ -15,7 +14,8 @@
 #' get.toptn(somatic.subset, chr, start.bp, end.bp, ref.dir)
 #' }
 #'
-#' @author \email{Fouad.Yousif@oicr.on.ca}
+#' @author \Fan Fan
+#' @author \Fouad Yousif
 
 get.toptn <- function(somatic.subset, chr, start.bp, end.bp, ref.dir){
 	dict <- c('A' = 'T', 'C' = 'G', 'G' = 'C', 'T' = 'A', 'N' = 'N');

@@ -22,7 +22,7 @@ library(foreach);
 #' seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.file="~/path/to/snv/data/file.bed", output.dir = ".", chromosome = "all", chromosome.length.file = "lengths.tsv", trinucleotide.count.file = "counts.tsv")
 #' }
 #'
-#' @author \email{Fouad.Yousif@oicr.on.ca}
+#' @author \Fouad Yousif, Fan Fan
 
 seqkat <- function(
 	sigcutoff = 5,
