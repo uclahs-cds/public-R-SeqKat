@@ -2,7 +2,7 @@ Package: SeqKat
 Type: Package
 Title: Detection of Kataegis
 Version: 0.0.2
-Date: 2017-03-13
+Date: 2017-05-04
 Author: Fouad Yousif, Xihui Lin, Fan Fan, Christopher Lalansingh
 Maintainer: Dr. Paul Boutros <paul.boutros@oicr.on.ca>
 Description: Contains functions to detect kataegis from SNVs in BED format. SeqKat reports two scores per kataegic event, a hypermutation score and an APOBEC mediated kataegic score.

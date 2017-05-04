@@ -1,4 +1,4 @@
-useDynLib(SeqKat)
+useDynLib(SeqKat, .registration = TRUE)
 
 
 export(

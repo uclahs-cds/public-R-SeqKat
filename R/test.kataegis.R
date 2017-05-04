@@ -13,7 +13,14 @@
 #'
 #' @examples
 #' \dontrun{
-#' test.kataegis(chromosome.num, somatic,units, exprobntcx, output.name, ref.dir, chromosome.length.file)
+#' test.kataegis(
+#'	chromosome.num,
+#'	somatic,units,
+#'	exprobntcx,
+#'	output.name,
+#'	ref.dir,
+#'	chromosome.length.file
+#'	);
 #' }
 #'
 #' @author Fouad Yousif
