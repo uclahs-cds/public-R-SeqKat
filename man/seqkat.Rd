@@ -35,7 +35,17 @@ The default paramters in SeqKat have been optimized using Alexanrov's "Signature
 }
 \examples{
 \dontrun{
-seqkat(5, 3.2, 4, ref.dir="~/path/to/hg19", bed.file="~/path/to/snv/data/file.bed", output.dir = ".", chromosome = "all", chromosome.length.file = "lengths.tsv", trinucleotide.count.file = "counts.tsv")
+seqkat(
+	5,
+	3.2,
+	4,
+	ref.dir="~/path/to/hg19",
+	bed.file="~/path/to/snv/data/file.bed",
+	output.dir = ".", 
+	chromosome = "all", 
+	chromosome.length.file = "lengths.tsv", 
+	trinucleotide.count.file = "counts.tsv"
+	);
 }
 
 }
