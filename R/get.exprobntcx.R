@@ -1,5 +1,4 @@
 library(doParallel);
-library(doMC);
 globalVariables("chr");
 
 #' get.exprobntcx

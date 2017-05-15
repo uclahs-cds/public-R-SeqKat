@@ -15,7 +15,6 @@ export(
 	);
 
 import(foreach);
-importFrom("doMC", "registerDoMC");
 import(doParallel);
 importFrom(Rcpp, evalCpp);
 importFrom("stats", "binom.test", "median", "na.omit", "p.adjust");

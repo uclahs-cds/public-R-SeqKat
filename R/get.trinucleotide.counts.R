@@ -1,5 +1,4 @@
 library(doParallel);
-library(doMC);
 globalVariables("chr");
 
 #' Get Trinucleotide Counts
@@ -22,7 +21,7 @@ globalVariables("chr");
 get.trinucleotide.counts <- function(ref.dir, ref.name, output.dir) {
 
     # for multi-core parallel
-    registerDoMC(cores = 24);
+    doMC::registerDoMC(cores = 24);
 
     chrs <- paste0('chr', c(as.character(1:22), 'X', 'Y'));
 
