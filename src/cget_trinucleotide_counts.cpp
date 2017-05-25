@@ -19,7 +19,7 @@ Rcpp::NumericVector cget_trinucleotide_counts(std::vector<std::string> key, std:
 
     std::ifstream f(chr.c_str());
 
-    char tri_nucl_c[length];
+    char *tri_nucl_c = new char[length];
     std::string tri_nucl;
 
     if(f.is_open()) {
@@ -58,5 +58,6 @@ Rcpp::NumericVector cget_trinucleotide_counts(std::vector<std::string> key, std:
     for (int i = 0; i < key.size(); ++i)
         count_vec[i] = count.at(key[i]);
 
+    delete[] tri_nucl_c;
     return count_vec;
 }

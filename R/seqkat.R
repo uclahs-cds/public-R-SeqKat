@@ -126,7 +126,7 @@ seqkat <- function(
 	else {
 		chrs <- c(as.numeric(chromosome));
 		}
-	sapply(
+	combined <- sapply(
 		chrs,
 		function(x){
 			combine.table(
