@@ -8,8 +8,6 @@
 #include <stdlib.h>
 #include <Rcpp.h>
 
-using namespace std;
-
 //[[Rcpp::export]]
 Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, std::string chr, const unsigned int up_stream = 1, 
         const unsigned int down_stream = 1, long start = 1, long end = -1) 
@@ -97,7 +95,7 @@ Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, s
 
         f.close();
 
-        Rcpp::NumericVector count_vec(key.size(),0);
+        Rcpp::NumericVector count_vec(key.size());
 
         for (int i = 0; i < key.size(); ++i)
                 count_vec[i] = count.at(key[i]);
