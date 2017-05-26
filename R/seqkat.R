@@ -18,7 +18,7 @@ library(foreach);
 #' @param trinucleotide.count.file A tab seprarated file containing a count of all trinucleotides present in the reference genome. This can be generated with the get.trinucleotide.counts() function in this package.
 #'
 #' @examples
-#' example.bed.file <- paste0(path.package("SeqKat"),"/inst/extdata/PD4120a-chr14-68359984-68372711_snvs.bed");
+#' example.bed.file <- paste0(path.package("SeqKat"),"/extdata/PD4120a-chr14-68359984-68372711_snvs.bed");
 #' seqkat(
 #'		5,
 #'		3.2,
@@ -71,7 +71,7 @@ seqkat <- function(
 	# Validate the chromosome.length.file
 	if (is.null(chromosome.length.file)) {
 		warning("No chromosome.length.file provided, using hg19 lengths by default.");
-		chromosome.length.file <- paste0(path.package("SeqKat"),"/inst/extdata/length_hg19_chr.txt")
+		chromosome.length.file <- paste0(path.package("SeqKat"),"/extdata/length_hg19_chr.txt")
 		}
 	else {
 		chr.length <- read.table(file=chromosome.length.file, header = TRUE, stringsAsFactors = FALSE);
@@ -89,7 +89,7 @@ seqkat <- function(
 	# Validate the trinucleotide.count.file
 	if (is.null(trinucleotide.count.file)) {
 		warning("No trinucleotide.count.file provided, using hg19 counts by default. This file can be generated using the get.trinucleotide.counts() function in this package.");
-		trinucleotide.count.file <- paste0(path.package("SeqKat"),"/inst/extdata/tn_count.txt")
+		trinucleotide.count.file <- paste0(path.package("SeqKat"),"/extdata/tn_count.txt")
 		}
 
 	if (!file.exists(output.dir)) {
