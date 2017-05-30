@@ -18,14 +18,18 @@ library(foreach);
 #' @param trinucleotide.count.file A tab seprarated file containing a count of all trinucleotides present in the reference genome. This can be generated with the get.trinucleotide.counts() function in this package.
 #'
 #' @examples
-#' example.bed.file <- paste0(path.package("SeqKat"),"/extdata/PD4120a-chr14-68359984-68372711_snvs.bed");
+#' example.bed.file <- paste0(path.package("SeqKat"),"/extdata/test/PD4120a-chr4-1-2000000_test_snvs.bed");
+#' example.ref.dir <- paste0(path.package("SeqKat"),"/extdata/test/ref/");
+#' example.chromosome.length.file <- paste0(path.package("SeqKat"),"/extdata/test/length_hg19_chr_test.txt");
 #' seqkat(
 #'		5,
 #'		3.2,
-#'		4,
+#'		2,
 #'		bed.file = example.bed.file,
-#'		output.dir = ".", 
-#'		chromosome = "all", 
+#'		output.dir = ".",
+#'		chromosome = "4",
+#'		ref.dir = example.ref.dir,
+#'		chromosome.length.file = example.chromosome.length.file
 #'		);
 #'
 #' @author Fouad Yousif
