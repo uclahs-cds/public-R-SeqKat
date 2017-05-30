@@ -34,14 +34,18 @@ Kataegis detection from SNV BED files
 The default paramters in SeqKat have been optimized using Alexanrov's "Signatures of mutational processes in human cancer" dataset. SeqKat accepts a BED file and outputs the results in TXT format. A file per chromosome is generated if a kataegic event is detected, otherwise no file is generated. SeqKat reports two scores per kataegic event, a hypermutation score and an APOBEC mediated kataegic score.
 }
 \examples{
-example.bed.file <- paste0(path.package("SeqKat"),"/extdata/PD4120a-chr14-68359984-68372711_snvs.bed");
+example.bed.file <- paste0(path.package("SeqKat"),"/extdata/test/PD4120a-chr4-1-2000000_test_snvs.bed");
+example.ref.dir <- paste0(path.package("SeqKat"),"/extdata/test/ref/");
+example.chromosome.length.file <- paste0(path.package("SeqKat"),"/extdata/test/length_hg19_chr_test.txt");
 seqkat(
 	5,
 	3.2,
-	4,
+	2,
 	bed.file = example.bed.file,
-	output.dir = ".", 
-	chromosome = "all", 
+	output.dir = ".",
+	chromosome = "4",
+	ref.dir = example.ref.dir,
+	chromosome.length.file = example.chromosome.length.file
 	);
 
 }
