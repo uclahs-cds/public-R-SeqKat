@@ -10,8 +10,8 @@ library(foreach);
 #' @param sigcutoff The minimum hypermutation score used to classify the windows in the sliding binomial test as significant windows. The score is calculated per window as follows: -log10(binomial test p-value). Recommended value: 5
 #' @param mutdistance The maximum intermutational distance allowed for SNVs to be grouped in the same kataegic event. Recommended value: 3.2
 #' @param segnum Minimum mutation count. The minimum number of mutations required within a cluster to be identified as kataegic. Recommended value: 4
-#' @param ref.dir Path to a directory containing the reference genome.
-#' @param bed.file Path to a directory containing the SNV data in BED format. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele
+#' @param ref.dir Path to a directory containing the reference genome. Each chromosome should have its own .fa file and chromosomes X and Y are named as chr23 and chr24. The fasta files should contain no header
+#' @param bed.file Path to the SNV BED file. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele
 #' @param output.dir Path to a directory where output will be created.
 #' @param chromosome The chromosome to be analysed. This can be (1, 2, ..., 23, 24) or "all" to run sequentially on all chromosomes.
 #' @param chromosome.length.file A tab separated file containing the lengths of all chromosomes in the reference genome.
