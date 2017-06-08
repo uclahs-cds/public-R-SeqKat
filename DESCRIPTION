@@ -9,7 +9,8 @@ Description: Kataegis is a localized hypermutation occurring when a region is en
 Depends: R (>= 2.15.1), foreach, doParallel
 Imports: Rcpp(>= 0.11.0)
 LinkingTo: Rcpp
-Suggests: testthat, doMC
+Suggests: testthat, doMC, rmarkdown
 License: GPL-2
 LazyLoad: yes
 RoxygenNote: 6.0.1
+VignetteBuilder: rmarkdown

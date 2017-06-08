@@ -15,9 +15,9 @@ seqkat(sigcutoff = 5, mutdistance = 3.2, segnum = 4, ref.dir = NULL,
 
 \item{segnum}{Minimum mutation count. The minimum number of mutations required within a cluster to be identified as kataegic. Recommended value: 4}
 
-\item{ref.dir}{Path to a directory containing the reference genome.}
+\item{ref.dir}{Path to a directory containing the reference genome. Each chromosome should have its own .fa file and chromosomes X and Y are named as chr23 and chr24. The fasta files should contain no header}
 
-\item{bed.file}{Path to a directory containing the SNV data in BED format. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele}
+\item{bed.file}{Path to the SNV BED file. The BED file should contain the following information: Chromosome, Position, Reference allele, Alternate allele}
 
 \item{output.dir}{Path to a directory where output will be created.}
 
@@ -34,9 +34,18 @@ Kataegis detection from SNV BED files
 The default paramters in SeqKat have been optimized using Alexanrov's "Signatures of mutational processes in human cancer" dataset. SeqKat accepts a BED file and outputs the results in TXT format. A file per chromosome is generated if a kataegic event is detected, otherwise no file is generated. SeqKat reports two scores per kataegic event, a hypermutation score and an APOBEC mediated kataegic score.
 }
 \examples{
-example.bed.file <- paste0(path.package("SeqKat"),"/extdata/test/PD4120a-chr4-1-2000000_test_snvs.bed");
-example.ref.dir <- paste0(path.package("SeqKat"),"/extdata/test/ref/");
-example.chromosome.length.file <- paste0(path.package("SeqKat"),"/extdata/test/length_hg19_chr_test.txt");
+example.bed.file <- paste0(
+path.package("SeqKat"),
+"/extdata/test/PD4120a-chr4-1-2000000_test_snvs.bed"
+);
+example.ref.dir <- paste0(
+path.package("SeqKat"),
+"/extdata/test/ref/"
+);
+example.chromosome.length.file <- paste0(
+path.package("SeqKat"),
+"/extdata/test/length_hg19_chr_test.txt"
+);
 seqkat(
 	5,
 	3.2,
