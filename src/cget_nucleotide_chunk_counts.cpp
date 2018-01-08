@@ -51,7 +51,7 @@ Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, s
 
         std::ifstream f(chr.c_str());
 
-        char *tri_nucl_c = new char[length]; // c-string (char array)
+        char *tri_nucl_c = new char[length + 1]; // c-string (char array)
         std::string tri_nucl; // c++ type string of tri_nucl_c
 
         if(f.is_open()) 
