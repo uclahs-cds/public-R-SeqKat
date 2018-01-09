@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // cget_nucleotide_chunk_counts
 Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, std::string chr, const unsigned int up_stream, const unsigned int down_stream, long start, long end);
-RcppExport SEXP SeqKat_cget_nucleotide_chunk_counts(SEXP keySEXP, SEXP chrSEXP, SEXP up_streamSEXP, SEXP down_streamSEXP, SEXP startSEXP, SEXP endSEXP) {
+RcppExport SEXP _SeqKat_cget_nucleotide_chunk_counts(SEXP keySEXP, SEXP chrSEXP, SEXP up_streamSEXP, SEXP down_streamSEXP, SEXP startSEXP, SEXP endSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -23,7 +23,7 @@ END_RCPP
 }
 // cget_trinucleotide_counts
 Rcpp::NumericVector cget_trinucleotide_counts(std::vector<std::string> key, std::string chr, const int length, long int start, long int end);
-RcppExport SEXP SeqKat_cget_trinucleotide_counts(SEXP keySEXP, SEXP chrSEXP, SEXP lengthSEXP, SEXP startSEXP, SEXP endSEXP) {
+RcppExport SEXP _SeqKat_cget_trinucleotide_counts(SEXP keySEXP, SEXP chrSEXP, SEXP lengthSEXP, SEXP startSEXP, SEXP endSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -38,7 +38,7 @@ END_RCPP
 }
 // cpp_get_context
 Rcpp::CharacterVector cpp_get_context(std::string chr, Rcpp::NumericVector pos, unsigned long pos_length);
-RcppExport SEXP SeqKat_cpp_get_context(SEXP chrSEXP, SEXP posSEXP, SEXP pos_lengthSEXP) {
+RcppExport SEXP _SeqKat_cpp_get_context(SEXP chrSEXP, SEXP posSEXP, SEXP pos_lengthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;

@@ -2,7 +2,7 @@
 title: "SeqKat"
 author: "Fouad Yousif, Xihui Lin, Fan Fan, Christopher Lalansingh"
 date: "`r Sys.Date()`"
-output: rmarkdown::pdf_document
+output: pdf_document
 vignette: >
   %\VignetteIndexEntry{SeqKat}
   %\VignetteEngine{knitr::rmarkdown}
