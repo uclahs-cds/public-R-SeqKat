@@ -18,7 +18,7 @@ Aggregates the total counts of each possible trinucleotide.
 }
 \examples{
 \dontrun{
-get.trinucleotide.counts(ref.dir, "hg19", ".");
+get.trinucleotide.counts(ref.dir, "hg19", tempdir());
 }
 }
 \author{

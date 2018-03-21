@@ -51,7 +51,7 @@ seqkat(
 	3.2,
 	2,
 	bed.file = example.bed.file,
-	output.dir = ".",
+	output.dir = tempdir(),
 	chromosome = "4",
 	ref.dir = example.ref.dir,
 	chromosome.length.file = example.chromosome.length.file

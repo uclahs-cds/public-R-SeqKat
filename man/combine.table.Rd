@@ -40,7 +40,7 @@ combine.table(
 	somatic,
 	3.2,
 	4,
-	"."
+	tempdir()
 	);
 }
 \author{

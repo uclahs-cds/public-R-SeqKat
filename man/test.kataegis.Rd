@@ -55,7 +55,7 @@ test.kataegis(
 	somatic,
 	2,
 	exprobntcx,
-	".",
+	tempdir(),
 	example.ref.dir,
 	example.chromosome.length.file
 	);

@@ -37,7 +37,7 @@ final.score(
 	test.table,
 	5,
 	somatic,
-	"."
+	tempdir()
 	);
 }
 \author{
