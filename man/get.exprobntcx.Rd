@@ -17,10 +17,24 @@ get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
 Gets the expected probability for each trinucleotide and total number of tcx
 }
 \examples{
-\dontrun{
-get.exprobntcx(somatic, ref.dir, trinucleotide.count.file)
-}
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/somatic.rda"
+		)
+	);
 
+trinucleotide.count.file <- paste0(
+	path.package("SeqKat"),
+	"/extdata/tn_count.txt"
+	);
+
+example.ref.dir <- paste0(
+	path.package("SeqKat"),
+	"/extdata/test/ref/"
+	);
+
+get.exprobntcx(somatic, example.ref.dir, trinucleotide.count.file)
 }
 \author{
 Fan Fan

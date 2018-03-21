@@ -10,6 +10,7 @@ export(
 	"get.pair",
 	"get.tn",
 	"get.toptn",
+	"get.trinucleotide.counts",
 	"seqkat",
 	"test.kataegis"
 	);

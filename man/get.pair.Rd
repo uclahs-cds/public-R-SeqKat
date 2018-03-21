@@ -16,10 +16,7 @@ Generates the reverse compliment of a nucleotide sequence
 Reverses and compliments the bases of the input string. Bases must be (A, C, G, T, or N).
 }
 \examples{
-\dontrun{
 get.pair("GATTACA")
-}
-
 }
 \author{
 Fouad Yousif

@@ -21,10 +21,27 @@ combine.table(test.table, somatic, mutdistance, segnum, output.name)
 Merges overlapped windows to identify genomic boundaries of kataegic events. This function also assigns hypermuation and kataegic score for combined windows
 }
 \examples{
-\dontrun{
-combine.table(test.table, somatic, mutdistance,segnum,output.name)
-}
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/somatic.rda"
+		)
+	);
 
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/final.score.rda"
+		)
+	);
+
+combine.table(
+	final.score,
+	somatic,
+	3.2,
+	4,
+	"."
+	);
 }
 \author{
 Fouad Yousif

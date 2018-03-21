@@ -19,10 +19,26 @@ final.score(test.table, cutoff, somatic, output.name)
 Assigns hypermutation score (hm.score) and kataegic score (k.score)
 }
 \examples{
-\dontrun{
-final.score(test.table, cutoff, somatic, output.name)
-}
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/somatic.rda"
+		)
+	);
 
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/test.table.rda"
+		)
+	);
+
+final.score(
+	test.table,
+	5,
+	somatic,
+	"."
+	);
 }
 \author{
 Fan Fan

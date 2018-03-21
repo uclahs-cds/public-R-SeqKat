@@ -26,17 +26,39 @@ test.kataegis(chromosome.num, somatic, units, exprobntcx, output.name, ref.dir,
 Performs exact binomial test to test the deviation of the 32 tri-nucleotides counts from expected
 }
 \examples{
-\dontrun{
-test.kataegis(
-chromosome.num,
-somatic,units,
-exprobntcx,
-output.name,
-ref.dir,
-chromosome.length.file
-);
-}
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/somatic.rda"
+		)
+	);
 
+load(
+	paste0(
+		path.package("SeqKat"),
+		"/extdata/test/exprobntcx.rda"
+		)
+	);
+
+example.chromosome.length.file <- paste0(
+	path.package("SeqKat"),
+	"/extdata/test/length_hg19_chr_test.txt"
+	);
+
+example.ref.dir <- paste0(
+	path.package("SeqKat"),
+	"/extdata/test/ref/"
+	);
+
+test.kataegis(
+	4,
+	somatic,
+	2,
+	exprobntcx,
+	".",
+	example.ref.dir,
+	example.chromosome.length.file
+	);
 }
 \author{
 Fouad Yousif

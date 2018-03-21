@@ -18,10 +18,11 @@ The trinucleotide context.
 Gets the 5' and 3' neighboring bases to the mutated base
 }
 \examples{
-\dontrun{
-get.context(file.path(referencie.genome.dir, 'chr1.fa'), c(158297133, 161176181))
-}
-
+example.ref.dir <- paste0(
+	path.package("SeqKat"),
+	"/extdata/test/ref/"
+	);
+get.context(file.path(example.ref.dir, 'chr4.fa'), c(1582933, 1611781))
 }
 \author{
 Fouad Yousif
