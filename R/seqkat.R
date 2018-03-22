@@ -109,10 +109,11 @@ seqkat <- function(
 		dir.create(output.dir);
 		}
 
+	sample.name <- paste(strsplit(basename(bed.file),'_')[[1]][strsplit(basename(bed.file),'_')[[1]]!='snvs.bed'],collapse='_');
 	somatic.directory <- paste0(
-		# output.dir,
-		# "/",
-		paste(strsplit(basename(bed.file),'_')[[1]][strsplit(basename(bed.file),'_')[[1]]!='snvs.bed'],collapse='_')
+		output.dir,
+		"/",
+		sample.name
 		);
 	dir.create(somatic.directory);
 	somatic.file <- bed.file;
@@ -148,7 +149,7 @@ seqkat <- function(
 						 somatic, 
 						 units = 2,
 						 exprobntcx = exprobntcx,
-						 output.name = output.name,
+						 output.name = sample.name,
 						 ref.dir = ref.dir,
 						 chromosome.length.file = chromosome.length.file
 						 ), 
