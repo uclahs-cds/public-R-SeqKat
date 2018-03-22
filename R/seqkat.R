@@ -108,9 +108,12 @@ seqkat <- function(
 	if (!file.exists(output.dir)) {
 		dir.create(output.dir);
 		}
-	setwd(output.dir);
 
-	somatic.directory <- paste(strsplit(basename(bed.file),'_')[[1]][strsplit(basename(bed.file),'_')[[1]]!='snvs.bed'],collapse='_');
+	somatic.directory <- paste0(
+		# output.dir,
+		# "/",
+		paste(strsplit(basename(bed.file),'_')[[1]][strsplit(basename(bed.file),'_')[[1]]!='snvs.bed'],collapse='_')
+		);
 	dir.create(somatic.directory);
 	somatic.file <- bed.file;
 	
