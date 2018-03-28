@@ -1,12 +1,12 @@
 # SeqKat 0.0.6
 ===========================
-- Removing 'SeqKat' in single quotes from the Title field of the DESCRIPTION file as requested by CRAN maintainer Swetlana Herbrandt
-- Removing 'SeqKat' in single quotes from the start of the Description field of DESCRIPTION file as requested by CRAN maintainer Uwe Ligges
-- Added 'SeqKat' in single quotes Title and Description field of DESCRIPTION file as requested by CRAN maintainer Swetlana Herbrandt
+- Removed 'SeqKat' in single quotes from the Title field of the DESCRIPTION file as requested by CRAN maintainer
+- Removed 'SeqKat' in single quotes from the start of the Description field of DESCRIPTION file as requested by CRAN maintainer
+- Added DOI to Description field of DESCRIPTION file as requested by CRAN maintainer
+- Added 'SeqKat' in single quotes Title and Description field of DESCRIPTION file as requested by CRAN maintainer
 - Modified the seqkat() function to not setwd() into the output.dir set by the user since you aren't allowed to chdir to /tmp on CRAN test servers
 - Switched "." in tests to tempdir() to avoid writing in the homedir of CRAN test servers
 - Wrote runnable tests to replace the \dontrun{} tests and added RData files based on the bed file in the test directory for the intermediate functions to be tested with
-
 
 # SeqKat 0.0.5
 ===========================
