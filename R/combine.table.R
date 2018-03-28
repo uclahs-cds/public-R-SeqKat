@@ -77,19 +77,10 @@ combine.table <- function(test.table, somatic, mutdistance,segnum,output.name){
 				num.mutations <- length.seg[status&length.seg>segnum]+1;
 				start.pos <- somatic.subset$POS[index1:index2][start.position];
 				end.pos <- somatic.subset$POS[index1:index2][start.position+length.seg[status&length.seg>segnum]];
-				#ifelse(test.table$exp.tcx == 0, 1, test.table$exp.tcx);
-				#if(as.numeric(score.k)<(as.numeric(score.k.mut[x]))){
+
 				score <- score.mut[x];
 				score.k <- score.k.mut[x];
-				#}else{}
-				#score <- max(score.mut[1:length(start.mut)]);
-				#score.k <- max(score.k.mut[1:length(start.mut)]);
-				#message(length(start.pos));
-				#message((num.mutations))
-				#message(length(start.mut));
-				#message(start.mut);
-				#message(length(num.mutations));
-				#message(length(rep(unique(as.character(sig.table$sample.name)),length(start.pos))));
+
 				raw.table <- rbind(
 					raw.table,
 					cbind(
