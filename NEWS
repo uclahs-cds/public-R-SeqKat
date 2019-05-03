@@ -2,6 +2,7 @@
 ===========================
 - Updated email for pboutros
 - sorting out CRAN checking issues with 0.0.7
+- fixed a typecast issue for systems where int is not compatible with size_t
 
 # SeqKat 0.0.7
 ===========================

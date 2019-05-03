@@ -45,7 +45,7 @@ Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, s
         const int length = up_stream + down_stream + 1;
 
         //initialize
-        for (int i = 0; i < key.size(); i++) {
+        for (size_t i = 0; i < key.size(); i++) {
                 count.insert(std::pair<std::string, long int>(key[i], 0));
                 }
 
@@ -97,7 +97,7 @@ Rcpp::NumericVector cget_nucleotide_chunk_counts(std::vector<std::string> key, s
 
         Rcpp::NumericVector count_vec(key.size());
 
-        for (int i = 0; i < key.size(); ++i)
+        for (size_t i = 0; i < key.size(); ++i)
                 count_vec[i] = count.at(key[i]);
 
         delete[] tri_nucl_c;
