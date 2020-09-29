@@ -16,5 +16,6 @@ Dependencies:
   - R (>= 2.15.1)
   - foreach
   - doParallel
+  - Rcpp
 References: "https://doi.org/10.1101/287839"
 Version: 0.0.8
