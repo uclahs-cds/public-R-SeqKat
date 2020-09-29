@@ -1,0 +1,20 @@
+---
+Category: tool
+Description: Kataegis is a localized hypermutation occurring when a region is enriched in somatic SNVs. Kataegis can result from multiple cytosine deaminations catalyzed by the AID/APOBEC family of proteins. This package contains functions to detect kataegis from SNVs in BED format. This package reports two scores per kataegic event, a hypermutation score and an APOBEC mediated kataegic score.
+Maintainers: Paul Boutros
+Contributors:
+  - Fouad Yousif
+  - Xihui Lin
+  - Fan Fan
+  - Christopher Lalansingh
+  - John Macdonald
+Languages:
+  - R
+  - C
+  - C++
+Dependencies:
+  - R (>= 2.15.1)
+  - foreach
+  - doParallel
+References: "https://doi.org/10.1101/287839"
+Version: 0.0.8

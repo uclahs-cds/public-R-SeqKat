@@ -1,0 +1,22 @@
+---
+name: R-CMD-check
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  R-CMD-check:
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 15
+
+    container:
+      image: blcdsdockerregistry/bl-r-devel:latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: SeqKat
+      - run: R CMD build SeqKat
+      - run: R CMD check --as-cran SeqKat_*.tar.gz
